@@ -18,14 +18,12 @@ class Calculator {
 }
 
 
-// Не удаляйте этот класс - он нужен для вывода результатов на экран и проверки
 public class Printer {
     public static void main(String[] args) {
         int a, b, c, d;
         char op, op2, undo;
 
         if (args.length == 0) {
-            // При отправке кода на Выполнение, вы можете варьировать эти параметры
             a = 3;
             op = '+';
             b = 7;
