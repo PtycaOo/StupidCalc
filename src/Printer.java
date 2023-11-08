@@ -4,30 +4,15 @@ import java.util.Deque;
 class Calculator {
     public int calculate(char op, int a, int b) {
         Deque<Integer> stack = new ArrayDeque<>();
-        int res = 0;
-        switch (op){
-            case '+':
-                res =  a + b;
-
-                stack.addFirst(res);
-                break;
-            case '-':
-                res =  a - b;
-
-                stack.addFirst(res);
-                break;
-            case '/':
-                res =  a / b;
-                stack.addFirst(res);
-                break;
-            case '*':
-                res =  a * b;
-                stack.addFirst(res);
-                break;
-            case '<':
-                res =  stack.pop();
-                break;
-        }
+        int res = switch (op) {
+            case '+' -> a + b;
+            case '-' -> a - b;
+            case '/' -> a / b;
+            case '*' -> a * b;
+            case '<' -> stack.pop();
+            default -> 0;
+        };
+        stack.addFirst(res);
         return res;
     }
 }
